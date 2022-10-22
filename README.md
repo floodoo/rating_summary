@@ -1,13 +1,15 @@
 # Rating Summary Widget
+
 Create a summary statistic Widget to display the rating and average rating of a product.
 
 ![Screenshot of the raring summary widget with the average rewiew indicator](assets/readme/rating_summary_example_average.png)
 ![Screenshot of the raring summary widget without the average rewiew indicator](assets/readme/rating_summary_example.png)
 
 ## Features
-| Platforms | Android | iOS | Web | MacOS | Linux | Windows |
-| --- | --- | --- | --- | --- | --- | --- |
-| **Status** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+
+| Platforms  | Android | iOS | Web | MacOS | Linux | Windows |
+| ---------- | ------- | --- | --- | ----- | ----- | ------- |
+| **Status** | ✅      | ✅  | ✅  | ✅    | ✅    | ✅      |
 
 ## Getting started
 
@@ -16,11 +18,17 @@ start using the package.
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
-
 ```dart
-const like = 'sample';
+RatingSummary(
+  ratingCounter: 13,
+  ratingAverage: 3.846,
+  showRatingAverage: true,
+  ratingFiveStarsCounter: 5,
+  ratingFourStarsCounter: 4,
+  ratingThreeStarsCounter: 2,
+  ratingTwoStarsCounter: 1,
+  ratingOneStarsCounter: 1,
+)
 ```
 
 ## Additional information

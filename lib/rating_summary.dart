@@ -8,6 +8,7 @@ class RatingSummary extends StatelessWidget {
     Key? key,
     required this.ratingCounter,
     this.ratingAverage = 0.0,
+    this.showRatingAverage = true,
     this.ratingFiveStarsCounter = 0,
     this.ratingFourStarsCounter = 0,
     this.ratingThreeStarsCounter = 0,
@@ -22,6 +23,7 @@ class RatingSummary extends StatelessWidget {
 
   final int ratingCounter;
   final double ratingAverage;
+  final bool showRatingAverage;
   final int ratingFiveStarsCounter;
   final int ratingFourStarsCounter;
   final int ratingThreeStarsCounter;
@@ -52,27 +54,29 @@ class RatingSummary extends StatelessWidget {
               ],
             ),
           ),
-          const SizedBox(width: 30),
-          Flexible(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text(ratingAverage.toStringAsFixed(1), style: ratingAverageStyle),
-                RatingBarIndicator(
-                  rating: ratingAverage,
-                  itemSize: 28,
-                  unratedColor: Colors.grey.shade200,
-                  itemBuilder: (context, index) => Icon(Icons.star, color: color),
-                ),
-                const SizedBox(height: 10),
-                Text(
-                  "$ratingCounter $ratingLabel",
-                  style: const TextStyle(fontWeight: FontWeight.w600),
-                  overflow: TextOverflow.fade,
-                ),
-              ],
+          if (showRatingAverage) ...[
+            const SizedBox(width: 30),
+            Flexible(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(ratingAverage.toStringAsFixed(1), style: ratingAverageStyle),
+                  RatingBarIndicator(
+                    rating: ratingAverage,
+                    itemSize: 28,
+                    unratedColor: Colors.grey.shade200,
+                    itemBuilder: (context, index) => Icon(Icons.star, color: color),
+                  ),
+                  const SizedBox(height: 10),
+                  Text(
+                    "$ratingCounter $ratingLabel",
+                    style: const TextStyle(fontWeight: FontWeight.w600),
+                    overflow: TextOverflow.fade,
+                  ),
+                ],
+              ),
             ),
-          )
+          ],
         ],
       ),
     );
@@ -113,4 +117,3 @@ class _ReviewBar extends StatelessWidget {
     );
   }
 }
-

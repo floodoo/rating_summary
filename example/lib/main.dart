@@ -31,16 +31,15 @@ class MyHomePage extends StatelessWidget {
       ),
       body: const Padding(
         padding: EdgeInsets.all(20.0),
-        child: Card(
-          child: RatingSummary(
-            ratingCounter: 13,
-            ratingAverage: 3.846,
-            ratingFiveStarsCounter: 5,
-            ratingFourStarsCounter: 4,
-            ratingThreeStarsCounter: 2,
-            ratingTwoStarsCounter: 1,
-            ratingOneStarsCounter: 1,
-          ),
+        child: RatingSummary(
+          ratingCounter: 13,
+          ratingAverage: 3.846,
+          showRatingAverage: true,
+          ratingFiveStarsCounter: 5,
+          ratingFourStarsCounter: 4,
+          ratingThreeStarsCounter: 2,
+          ratingTwoStarsCounter: 1,
+          ratingOneStarsCounter: 1,
         ),
       ),
     );

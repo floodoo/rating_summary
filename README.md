@@ -1,22 +1,13 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# Rating Summary Widget
+Create a summary statistic Widget to display the rating and average rating of a product.
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+![Screenshot of the raring summary widget with the average rewiew indicator](assets/readme/rating_summary_example_average.png)
+![Screenshot of the raring summary widget without the average rewiew indicator](assets/readme/rating_summary_example.png)
 
 ## Features
-
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+| Platforms | Android | iOS | Web | MacOS | Linux | Windows |
+| --- | --- | --- | --- | --- | --- | --- |
+| **Status** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 
 ## Getting started
 

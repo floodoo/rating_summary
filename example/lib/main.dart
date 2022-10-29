@@ -32,14 +32,14 @@ class MyHomePage extends StatelessWidget {
       body: const Padding(
         padding: EdgeInsets.all(20.0),
         child: RatingSummary(
-          ratingCounter: 13,
-          ratingAverage: 3.846,
-          showRatingAverage: true,
-          ratingFiveStarsCounter: 5,
-          ratingFourStarsCounter: 4,
-          ratingThreeStarsCounter: 2,
-          ratingTwoStarsCounter: 1,
-          ratingOneStarsCounter: 1,
+          counter: 13,
+          average: 3.846,
+          showAverage: true,
+          counterFiveStars: 5,
+          counterFourStars: 4,
+          counterThreeStars: 2,
+          counterTwoStars: 1,
+          counterOneStars: 1,
         ),
       ),
     );

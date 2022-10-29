@@ -7,10 +7,6 @@ Create a summary statistic Widget to display the rating and average rating of a 
 
 ## Features
 
-| Platforms  | Android | iOS | Web | MacOS | Linux | Windows |
-| ---------- | ------- | --- | --- | ----- | ----- | ------- |
-| **Status** | ✅      | ✅  | ✅  | ✅    | ✅    | ✅      |
-
 ## Getting started
 
 TODO: List prerequisites and provide or point to information on how to
@@ -20,14 +16,14 @@ start using the package.
 
 ```dart
 RatingSummary(
-  ratingCounter: 13,
-  ratingAverage: 3.846,
-  showRatingAverage: true,
-  ratingFiveStarsCounter: 5,
-  ratingFourStarsCounter: 4,
-  ratingThreeStarsCounter: 2,
-  ratingTwoStarsCounter: 1,
-  ratingOneStarsCounter: 1,
+  counter: 13,
+  average: 3.846,
+  showAverage: true,
+  counterFiveStars: 5,
+  counterFourStars: 4,
+  counterThreeStars: 2,
+  counterTwoStars: 1,
+  counterOneStars: 1,
 )
 ```
 

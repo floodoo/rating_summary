@@ -2,8 +2,8 @@
 
 Create a summary statistic Widget to display the rating and average rating of a product.
 
-![Screenshot of the raring summary widget with the average rewiew indicator](https://raw.githubusercontent.com/floodoo/rating_summary/main/assets/readme/rating_summary_example_average.png)
-![Screenshot of the raring summary widget without the average rewiew indicator](https://raw.githubusercontent.com/floodoo/rating_summary/main/assets/readme/rating_summary_example.png)
+![Screenshot of the raring summary widget with the average rewiew indicator](https://raw.githubusercontent.com/floodoo/rating_summary/main/assets/readme/rating_summary_average.png)
+![Screenshot of the raring summary widget without the average rewiew indicator](https://raw.githubusercontent.com/floodoo/rating_summary/main/assets/readme/rating_summary.png)
 
 ## Installing:
 

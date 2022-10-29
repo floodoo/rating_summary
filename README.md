@@ -2,15 +2,23 @@
 
 Create a summary statistic Widget to display the rating and average rating of a product.
 
-![Screenshot of the raring summary widget with the average rewiew indicator](assets/readme/rating_summary_example_average.png)
-![Screenshot of the raring summary widget without the average rewiew indicator](assets/readme/rating_summary_example.png)
+![Screenshot of the raring summary widget with the average rewiew indicator](https://raw.githubusercontent.com/floodoo/rating_summary/main/assets/readme/rating_summary_example_average.png)
+![Screenshot of the raring summary widget without the average rewiew indicator](https://raw.githubusercontent.com/floodoo/rating_summary/main/assets/readme/rating_summary_example.png)
 
-## Features
+## Installing:
 
-## Getting started
+1. Add the dependency in your `pubspec.yaml` file.
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+```yaml
+dependencies:
+  rating_summary: ^1.0.0
+```
+
+2. Import the `rating_summary` package.
+
+```dart
+import 'package:rating_summary/rating_summary.dart';
+```
 
 ## Usage
 
@@ -27,8 +35,20 @@ RatingSummary(
 )
 ```
 
-## Additional information
+### Parameters
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+| Parameter         | Description                                 | Type      | Default                                              | Required |
+| ----------------- | ------------------------------------------- | --------- | ---------------------------------------------------- | -------- |
+| counter           | The total number of ratings.                | int       | -                                                    | &#x2611; |
+| average           | The average rating.                         | double    | 0.0                                                  | &#x2610; |
+| showAverage       | Show the average rating indicator.          | bool      | true                                                 | &#x2610; |
+| averageStyle      | The style of the average rating indicator.  | TextStyle | TextStyle(fontWeight: FontWeight.bold, fontSize: 40) | &#x2610; |
+| counterFiveStars  | The number of 5 star ratings.               | int       | 0                                                    | &#x2610; |
+| counterFourStars  | The number of 4 star ratings.               | int       | 0                                                    | &#x2610; |
+| counterThreeStars | The number of 3 star ratings.               | int       | 0                                                    | &#x2610; |
+| counterTwoStars   | The number of 2 star ratings.               | int       | 0                                                    | &#x2610; |
+| counterOneStars   | The number of 1 star ratings.               | int       | 0                                                    | &#x2610; |
+| label             | The label of the rating summary.            | String    | "Rating"                                             | &#x2610; |
+| labelStyle        | The style of the label.                     | TextStyle | TextStyle(fontWeight: FontWeight.w600)               | &#x2610; |
+| color             | The primary color of the rating summary.    | Color     | Colors.amber                                         | &#x2610; |
+| backgroundColor   | The background color of the rating summary. | Color     | Color(0xFFEEEEEE)                                    | &#x2610; |

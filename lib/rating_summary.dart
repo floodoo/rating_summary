@@ -1,3 +1,6 @@
+/// Libary to display a summary of ratings.
+/// 
+/// This library is used to display statistics about ratings.
 library rating_summary;
 
 import 'package:flutter/material.dart';
@@ -25,6 +28,7 @@ class RatingSummary extends StatelessWidget {
     required this.counter,
     this.average = 0.0,
     this.showAverage = true,
+    this.averageStyle = const TextStyle(fontWeight: FontWeight.bold, fontSize: 40),
     this.counterFiveStars = 0,
     this.counterFourStars = 0,
     this.counterThreeStars = 0,
@@ -32,9 +36,8 @@ class RatingSummary extends StatelessWidget {
     this.counterOneStars = 0,
     this.label = 'Ratings',
     this.labelStyle = const TextStyle(fontWeight: FontWeight.w600),
-    this.averageStyle = const TextStyle(fontWeight: FontWeight.bold, fontSize: 40),
     this.color = Colors.amber,
-    this.secondaryColor = const Color(0xFFEEEEEE),
+    this.backgroundColor = const Color(0xFFEEEEEE),
   }) : super(key: key);
 
   /// The total number of ratings.
@@ -108,7 +111,7 @@ class RatingSummary extends StatelessWidget {
   /// The color of the unused stars and the background of the horizontal bar [_ReviewBar].
   ///
   /// The default value is Color(0xFFEEEEEE).
-  final Color secondaryColor;
+  final Color backgroundColor;
 
   @override
   Widget build(BuildContext context) {
@@ -123,31 +126,31 @@ class RatingSummary extends StatelessWidget {
                 label: "5",
                 value: counterFiveStars / counter,
                 color: color,
-                secondaryColor: secondaryColor,
+                backgroundColor: backgroundColor,
               ),
               _ReviewBar(
                 label: "4",
                 value: counterFourStars / counter,
                 color: color,
-                secondaryColor: secondaryColor,
+                backgroundColor: backgroundColor,
               ),
               _ReviewBar(
                 label: "3",
                 value: counterThreeStars / counter,
                 color: color,
-                secondaryColor: secondaryColor,
+                backgroundColor: backgroundColor,
               ),
               _ReviewBar(
                 label: "2",
                 value: counterTwoStars / counter,
                 color: color,
-                secondaryColor: secondaryColor,
+                backgroundColor: backgroundColor,
               ),
               _ReviewBar(
                 label: "1",
                 value: counterOneStars / counter,
                 color: color,
-                secondaryColor: secondaryColor,
+                backgroundColor: backgroundColor,
               ),
             ],
           ),
@@ -162,7 +165,7 @@ class RatingSummary extends StatelessWidget {
                 RatingBarIndicator(
                   rating: average,
                   itemSize: 28,
-                  unratedColor: secondaryColor,
+                  unratedColor: backgroundColor,
                   itemBuilder: (context, index) => Icon(Icons.star, color: color),
                 ),
                 const SizedBox(height: 10),
@@ -197,28 +200,28 @@ class _ReviewBar extends StatelessWidget {
     required this.label,
     required this.value,
     this.color = Colors.amber,
-    this.secondaryColor = const Color(0xFFEEEEEE),
+    this.backgroundColor = const Color(0xFFEEEEEE),
   }) : super(key: key);
 
   /// The label of the bar.
-  /// 
+  ///
   /// It will be displayed on the left side of the bar.
   final String label;
 
   /// The progress value of the bar.
-  /// 
+  ///
   /// It must be between 0.0 and 1.0.
   final double value;
 
   /// The color of the bar.
-  /// 
+  ///
   /// The default value is Colors.amber.
   final Color color;
 
   /// The backgroundcolor of the bar.
-  /// 
+  ///
   /// The default value is Color(0xFFEEEEEE).
-  final Color secondaryColor;
+  final Color backgroundColor;
 
   @override
   Widget build(BuildContext context) {
@@ -238,7 +241,7 @@ class _ReviewBar extends StatelessWidget {
                 child: LinearProgressIndicator(
                   value: value,
                   valueColor: AlwaysStoppedAnimation<Color>(color),
-                  backgroundColor: secondaryColor,
+                  backgroundColor: backgroundColor,
                 ),
               ),
             ),

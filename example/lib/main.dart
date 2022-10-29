@@ -35,7 +35,6 @@ class MyHomePage extends StatelessWidget {
         child: RatingSummary(
           counter: 13,
           average: 3.846,
-          showAverage: true,
           counterFiveStars: 5,
           counterFourStars: 4,
           counterThreeStars: 2,

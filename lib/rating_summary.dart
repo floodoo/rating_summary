@@ -14,7 +14,6 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 /// RatingSummary(
 ///   counter: 13,
 ///   average: 3.846,
-///   showAverage: true,
 ///   counterFiveStars: 5,
 ///   counterFourStars: 4,
 ///   counterThreeStars: 2,

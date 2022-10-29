@@ -39,16 +39,16 @@ RatingSummary(
 
 | Parameter         | Description                                 | Type      | Default                                              | Required |
 | ----------------- | ------------------------------------------- | --------- | ---------------------------------------------------- | -------- |
-| counter           | The total number of ratings.                | int       | -                                                    | &#x2611; |
-| average           | The average rating.                         | double    | 0.0                                                  | &#x2610; |
-| showAverage       | Show the average rating indicator.          | bool      | true                                                 | &#x2610; |
-| averageStyle      | The style of the average rating indicator.  | TextStyle | TextStyle(fontWeight: FontWeight.bold, fontSize: 40) | &#x2610; |
-| counterFiveStars  | The number of 5 star ratings.               | int       | 0                                                    | &#x2610; |
-| counterFourStars  | The number of 4 star ratings.               | int       | 0                                                    | &#x2610; |
-| counterThreeStars | The number of 3 star ratings.               | int       | 0                                                    | &#x2610; |
-| counterTwoStars   | The number of 2 star ratings.               | int       | 0                                                    | &#x2610; |
-| counterOneStars   | The number of 1 star ratings.               | int       | 0                                                    | &#x2610; |
-| label             | The label of the rating summary.            | String    | "Rating"                                             | &#x2610; |
-| labelStyle        | The style of the label.                     | TextStyle | TextStyle(fontWeight: FontWeight.w600)               | &#x2610; |
-| color             | The primary color of the rating summary.    | Color     | Colors.amber                                         | &#x2610; |
-| backgroundColor   | The background color of the rating summary. | Color     | Color(0xFFEEEEEE)                                    | &#x2610; |
+| counter           | The total number of ratings.                | int       | -                                                    | ✓        |
+| average           | The average rating.                         | double    | 0.0                                                  | -        |
+| showAverage       | Show the average rating indicator.          | bool      | true                                                 | -        |
+| averageStyle      | The style of the average rating indicator.  | TextStyle | TextStyle(fontWeight: FontWeight.bold, fontSize: 40) | -        |
+| counterFiveStars  | The number of 5 star ratings.               | int       | 0                                                    | -        |
+| counterFourStars  | The number of 4 star ratings.               | int       | 0                                                    | -        |
+| counterThreeStars | The number of 3 star ratings.               | int       | 0                                                    | -        |
+| counterTwoStars   | The number of 2 star ratings.               | int       | 0                                                    | -        |
+| counterOneStars   | The number of 1 star ratings.               | int       | 0                                                    | -        |
+| label             | The label of the rating summary.            | String    | "Rating"                                             | -        |
+| labelStyle        | The style of the label.                     | TextStyle | TextStyle(fontWeight: FontWeight.w600)               | -        |
+| color             | The primary color of the rating summary.    | Color     | Colors.amber                                         | -        |
+| backgroundColor   | The background color of the rating summary. | Color     | Color(0xFFEEEEEE)                                    | -        |

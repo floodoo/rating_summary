@@ -1,5 +1,5 @@
 /// Libary to display a summary of ratings.
-/// 
+///
 /// This library is used to display statistics about ratings.
 library rating_summary;
 
@@ -28,7 +28,10 @@ class RatingSummary extends StatelessWidget {
     required this.counter,
     this.average = 0.0,
     this.showAverage = true,
-    this.averageStyle = const TextStyle(fontWeight: FontWeight.bold, fontSize: 40),
+    this.averageStyle = const TextStyle(
+      fontWeight: FontWeight.bold,
+      fontSize: 40,
+    ),
     this.counterFiveStars = 0,
     this.counterFourStars = 0,
     this.counterThreeStars = 0,
@@ -166,7 +169,9 @@ class RatingSummary extends StatelessWidget {
                   rating: average,
                   itemSize: 28,
                   unratedColor: backgroundColor,
-                  itemBuilder: (context, index) => Icon(Icons.star, color: color),
+                  itemBuilder: (context, index) {
+                    return Icon(Icons.star, color: color);
+                  },
                 ),
                 const SizedBox(height: 10),
                 Text(
@@ -231,7 +236,10 @@ class _ReviewBar extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisSize: MainAxisSize.min,
         children: [
-          Text(label, style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
+          Text(
+            label,
+            style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+          ),
           const SizedBox(width: 20),
           Expanded(
             child: ClipRRect(

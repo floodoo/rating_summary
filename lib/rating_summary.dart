@@ -3,6 +3,22 @@ library rating_summary;
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
+/// A widget that displays a summary of a rating.
+///
+/// Example:
+///
+/// ```dart
+/// RatingSummary(
+///   counter: 13,
+///   average: 3.846,
+///   showAverage: true,
+///   counterFiveStars: 5,
+///   counterFourStars: 4,
+///   counterThreeStars: 2,
+///   counterTwoStars: 1,
+///   counterOneStars: 1,
+/// )
+/// ```
 class RatingSummary extends StatelessWidget {
   const RatingSummary({
     Key? key,
@@ -14,7 +30,6 @@ class RatingSummary extends StatelessWidget {
     this.counterThreeStars = 0,
     this.counterTwoStars = 0,
     this.counterOneStars = 0,
-    this.padding = const EdgeInsets.all(10.0),
     this.label = 'Ratings',
     this.labelStyle = const TextStyle(fontWeight: FontWeight.w600),
     this.averageStyle = const TextStyle(fontWeight: FontWeight.bold, fontSize: 40),
@@ -22,94 +37,160 @@ class RatingSummary extends StatelessWidget {
     this.secondaryColor = const Color(0xFFEEEEEE),
   }) : super(key: key);
 
+  /// The total number of ratings.
+  ///
+  /// This is the number of ratings that will be displayed in the [label].
   final int counter;
+
+  /// The average rating.
+  ///
+  /// This is the average rating that will be displayed when [showAverage] is true.
+  /// You can use the [averageStyle] to customize the look of the average rating.
+  /// The default value is 0.0.
+  /// This value will NOT be calculated from the given parameters.
   final double average;
+
+  /// Whether to show the average rating.
+  ///
+  /// If true, the average rating will be displayed. If not specified, the default value is true.
   final bool showAverage;
-  final int counterFiveStars;
-  final int counterFourStars;
-  final int counterThreeStars;
-  final int counterTwoStars;
-  final int counterOneStars;
-  final EdgeInsets padding;
-  final String label;
-  final TextStyle labelStyle;
+
+  /// The style of the [average] rating.
+  ///
+  /// You can use this to customize the look of it.
+  /// The default value is a bold font size of 40.
   final TextStyle averageStyle;
+
+  /// The number of ratings with 5 stars.
+  ///
+  /// This is the number of ratings with 5 stars that will be displayed in the [_ReviewBar].
+  /// The default value is 0.
+  final int counterFiveStars;
+
+  /// The number of ratings with 4 stars.
+  ///
+  /// This is the number of ratings with 4 stars that will be displayed in the [_ReviewBar].
+  /// The default value is 0.
+  final int counterFourStars;
+
+  /// The number of ratings with 3 stars.
+  ///
+  /// This is the number of ratings with 3 stars that will be displayed in the [_ReviewBar].
+  /// The default value is 0.
+  final int counterThreeStars;
+
+  /// The number of ratings with 2 stars.
+  ///
+  /// This is the number of ratings with 2 stars that will be displayed in the [_ReviewBar].
+  /// The default value is 0.
+  final int counterTwoStars;
+
+  /// The number of ratings with 1 stars.
+  ///
+  /// This is the number of ratings with 1 stars that will be displayed in the [_ReviewBar].
+  final int counterOneStars;
+
+  /// The label of the [counter]
+  ///
+  /// It will be displayed below the [average] counter with stars. It only appears when [showAverage] is true.
+  final String label;
+
+  /// The style of the [label].
+  ///
+  /// You can use this to customize the look of it. The default value is a semi-bold font.
+  final TextStyle labelStyle;
+
+  /// The color of the stars and the horizontal bar [_ReviewBar].
+  ///
+  /// The default value is Colors.amber.
   final Color color;
+
+  /// The color of the unused stars and the background of the horizontal bar [_ReviewBar].
+  ///
+  /// The default value is Color(0xFFEEEEEE).
   final Color secondaryColor;
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: padding,
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Flexible(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              _ReviewBar(
+                label: "5",
+                value: counterFiveStars / counter,
+                color: color,
+                secondaryColor: secondaryColor,
+              ),
+              _ReviewBar(
+                label: "4",
+                value: counterFourStars / counter,
+                color: color,
+                secondaryColor: secondaryColor,
+              ),
+              _ReviewBar(
+                label: "3",
+                value: counterThreeStars / counter,
+                color: color,
+                secondaryColor: secondaryColor,
+              ),
+              _ReviewBar(
+                label: "2",
+                value: counterTwoStars / counter,
+                color: color,
+                secondaryColor: secondaryColor,
+              ),
+              _ReviewBar(
+                label: "1",
+                value: counterOneStars / counter,
+                color: color,
+                secondaryColor: secondaryColor,
+              ),
+            ],
+          ),
+        ),
+        if (showAverage) ...[
+          const SizedBox(width: 30),
           Flexible(
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                _ReviewBar(
-                  label: "5",
-                  value: counterFiveStars / counter,
-                  color: color,
-                  secondaryColor: secondaryColor,
+                Text(average.toStringAsFixed(1), style: averageStyle),
+                RatingBarIndicator(
+                  rating: average,
+                  itemSize: 28,
+                  unratedColor: secondaryColor,
+                  itemBuilder: (context, index) => Icon(Icons.star, color: color),
                 ),
-                _ReviewBar(
-                  label: "4",
-                  value: counterFourStars / counter,
-                  color: color,
-                  secondaryColor: secondaryColor,
-                ),
-                _ReviewBar(
-                  label: "3",
-                  value: counterThreeStars / counter,
-                  color: color,
-                  secondaryColor: secondaryColor,
-                ),
-                _ReviewBar(
-                  label: "2",
-                  value: counterTwoStars / counter,
-                  color: color,
-                  secondaryColor: secondaryColor,
-                ),
-                _ReviewBar(
-                  label: "1",
-                  value: counterOneStars / counter,
-                  color: color,
-                  secondaryColor: secondaryColor,
+                const SizedBox(height: 10),
+                Text(
+                  "$counter $label",
+                  style: const TextStyle(fontWeight: FontWeight.w600),
+                  overflow: TextOverflow.fade,
                 ),
               ],
             ),
           ),
-          if (showAverage) ...[
-            const SizedBox(width: 30),
-            Flexible(
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Text(average.toStringAsFixed(1), style: averageStyle),
-                  RatingBarIndicator(
-                    rating: average,
-                    itemSize: 28,
-                    unratedColor: secondaryColor,
-                    itemBuilder: (context, index) => Icon(Icons.star, color: color),
-                  ),
-                  const SizedBox(height: 10),
-                  Text(
-                    "$counter $label",
-                    style: const TextStyle(fontWeight: FontWeight.w600),
-                    overflow: TextOverflow.fade,
-                  ),
-                ],
-              ),
-            ),
-          ],
         ],
-      ),
+      ],
     );
   }
 }
 
+/// A widget that displays a horizontal bar with a label.
+///
+/// Example:
+/// ```dart
+///  _ReviewBar(
+///    label: "5",
+///    value: counterFiveStars / counter,
+///    color: color,
+///    secondaryColor: secondaryColor,
+///  )
+/// ```
 class _ReviewBar extends StatelessWidget {
   const _ReviewBar({
     Key? key,
@@ -119,9 +200,24 @@ class _ReviewBar extends StatelessWidget {
     this.secondaryColor = const Color(0xFFEEEEEE),
   }) : super(key: key);
 
+  /// The label of the bar.
+  /// 
+  /// It will be displayed on the left side of the bar.
   final String label;
+
+  /// The progress value of the bar.
+  /// 
+  /// It must be between 0.0 and 1.0.
   final double value;
+
+  /// The color of the bar.
+  /// 
+  /// The default value is Colors.amber.
   final Color color;
+
+  /// The backgroundcolor of the bar.
+  /// 
+  /// The default value is Color(0xFFEEEEEE).
   final Color secondaryColor;
 
   @override

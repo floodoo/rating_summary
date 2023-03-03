@@ -36,6 +36,16 @@ class RatingSummary extends StatelessWidget {
     this.counterThreeStars = 0,
     this.counterTwoStars = 0,
     this.counterOneStars = 0,
+    this.labelCounterFiveStars = '5',
+    this.labelCounterFourStars = '4',
+    this.labelCounterThreeStars = '3',
+    this.labelCounterTwoStars = '2',
+    this.labelCounterOneStars = '1',
+    this.labelCounterFiveStarsStyle = const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+    this.labelCounterFourStarsStyle = const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+    this.labelCounterThreeStarsStyle = const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+    this.labelCounterTwoStarsStyle = const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+    this.labelCounterOneStarsStyle = const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
     this.label = 'Ratings',
     this.labelStyle = const TextStyle(fontWeight: FontWeight.w600),
     this.color = Colors.amber,
@@ -95,6 +105,56 @@ class RatingSummary extends StatelessWidget {
   /// This is the number of ratings with 1 stars that will be displayed in the [_ReviewBar].
   final int counterOneStars;
 
+  /// The label of the [counterFiveStars].
+  ///
+  /// It will be displayed left of the [_ReviewBar] with 5 stars. The default value is '5'.
+  final String labelCounterFiveStars;
+
+  /// The label of the [counterFourStars].
+  ///
+  /// It will be displayed left of the [_ReviewBar] with 4 stars. The default value is '4'.
+  final String labelCounterFourStars;
+
+  /// The label of the [counterThreeStars].
+  ///
+  /// It will be displayed left of the [_ReviewBar] with 3 stars. The default value is '3'.
+  final String labelCounterThreeStars;
+
+  /// The label of the [counterTwoStars].
+  ///
+  /// It will be displayed left of the [_ReviewBar] with 2 stars. The default value is '2'.
+  final String labelCounterTwoStars;
+
+  /// The label of the [counterOneStars].
+  ///
+  /// It will be displayed left of the [_ReviewBar] with 1 stars. The default value is '1'.
+  final String labelCounterOneStars;
+
+  /// The style of the [labelCounterFiveStars].
+  ///
+  /// You can use this to customize the look of it. The default value is a bold font size of 14.
+  final TextStyle labelCounterFiveStarsStyle;
+
+  /// The style of the [labelCounterFourStars].
+  ///
+  /// You can use this to customize the look of it. The default value is a bold font size of 14.
+  final TextStyle labelCounterFourStarsStyle;
+
+  /// The style of the [labelCounterThreeStars].
+  ///
+  /// You can use this to customize the look of it. The default value is a bold font size of 14.
+  final TextStyle labelCounterThreeStarsStyle;
+
+  /// The style of the [labelCounterTwoStars].
+  ///
+  /// You can use this to customize the look of it. The default value is a bold font size of 14.
+  final TextStyle labelCounterTwoStarsStyle;
+
+  /// The style of the [labelCounterOneStars].
+  ///
+  /// You can use this to customize the look of it. The default value is a bold font size of 14.
+  final TextStyle labelCounterOneStarsStyle;
+
   /// The label of the [counter]
   ///
   /// It will be displayed below the [average] counter with stars. It only appears when [showAverage] is true.
@@ -125,31 +185,36 @@ class RatingSummary extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               _ReviewBar(
-                label: "5",
+                label: labelCounterFiveStars,
+                labelStyle: labelCounterFiveStarsStyle,
                 value: counterFiveStars / counter,
                 color: color,
                 backgroundColor: backgroundColor,
               ),
               _ReviewBar(
-                label: "4",
+                label: labelCounterFourStars,
+                labelStyle: labelCounterFourStarsStyle,
                 value: counterFourStars / counter,
                 color: color,
                 backgroundColor: backgroundColor,
               ),
               _ReviewBar(
-                label: "3",
+                label: labelCounterThreeStars,
+                labelStyle: labelCounterThreeStarsStyle,
                 value: counterThreeStars / counter,
                 color: color,
                 backgroundColor: backgroundColor,
               ),
               _ReviewBar(
-                label: "2",
+                label: labelCounterTwoStars,
+                labelStyle: labelCounterTwoStarsStyle,
                 value: counterTwoStars / counter,
                 color: color,
                 backgroundColor: backgroundColor,
               ),
               _ReviewBar(
-                label: "1",
+                label: labelCounterOneStars,
+                labelStyle: labelCounterOneStarsStyle,
                 value: counterOneStars / counter,
                 color: color,
                 backgroundColor: backgroundColor,
@@ -205,12 +270,18 @@ class _ReviewBar extends StatelessWidget {
     required this.value,
     this.color = Colors.amber,
     this.backgroundColor = const Color(0xFFEEEEEE),
+    this.labelStyle = const TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
   }) : super(key: key);
 
   /// The label of the bar.
   ///
   /// It will be displayed on the left side of the bar.
   final String label;
+
+  /// Style of the label.
+  ///
+  /// The default value is a bold font size of 14.
+  final TextStyle labelStyle;
 
   /// The progress value of the bar.
   ///
@@ -237,7 +308,7 @@ class _ReviewBar extends StatelessWidget {
         children: [
           Text(
             label,
-            style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+            style: labelStyle,
           ),
           const SizedBox(width: 20),
           Expanded(

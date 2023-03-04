@@ -1,3 +1,7 @@
+## 1.0.2+1
+* Fix formatting
+* Update documentation
+
 ## 1.0.2
 * Add custom counter label and style
 
@@ -9,5 +13,4 @@
 * Fix formatting
 
 ## 1.0.0
-
 * Initial release

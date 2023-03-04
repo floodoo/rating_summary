@@ -41,11 +41,16 @@ class RatingSummary extends StatelessWidget {
     this.labelCounterThreeStars = '3',
     this.labelCounterTwoStars = '2',
     this.labelCounterOneStars = '1',
-    this.labelCounterFiveStarsStyle = const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
-    this.labelCounterFourStarsStyle = const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
-    this.labelCounterThreeStarsStyle = const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
-    this.labelCounterTwoStarsStyle = const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
-    this.labelCounterOneStarsStyle = const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+    this.labelCounterFiveStarsStyle =
+        const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+    this.labelCounterFourStarsStyle =
+        const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+    this.labelCounterThreeStarsStyle =
+        const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+    this.labelCounterTwoStarsStyle =
+        const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+    this.labelCounterOneStarsStyle =
+        const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
     this.label = 'Ratings',
     this.labelStyle = const TextStyle(fontWeight: FontWeight.w600),
     this.color = Colors.amber,
@@ -270,7 +275,8 @@ class _ReviewBar extends StatelessWidget {
     required this.value,
     this.color = Colors.amber,
     this.backgroundColor = const Color(0xFFEEEEEE),
-    this.labelStyle = const TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
+    this.labelStyle =
+        const TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
   }) : super(key: key);
 
   /// The label of the bar.

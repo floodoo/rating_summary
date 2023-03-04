@@ -11,7 +11,7 @@ Create a summary statistic Widget to display the rating and average rating of a 
 
 ```yaml
 dependencies:
-  rating_summary: ^1.0.2
+  rating_summary: ^1.0.2+1
 ```
 
 2. Import the `rating_summary` package.

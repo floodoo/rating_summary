@@ -323,7 +323,7 @@ class _ReviewBar extends StatelessWidget {
               child: SizedBox(
                 height: 10,
                 child: LinearProgressIndicator(
-                  value: value,
+                  value: value.isFinite ? value : 0.0,
                   valueColor: AlwaysStoppedAnimation<Color>(color),
                   backgroundColor: backgroundColor,
                 ),

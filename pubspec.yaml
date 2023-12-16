@@ -12,6 +12,7 @@ dependencies:
     sdk: flutter
 
   flutter_rating_bar: ^4.0.1
+  flutter_screenutil:
 
 dev_dependencies:
   flutter_test:

@@ -1,3 +1,6 @@
+## 1.0.3+1
+* Fix Infinity or NaN exception by [borisvelts](https://github.com/borisvelts)
+
 ## 1.0.2+1
 * Fix formatting
 * Update documentation

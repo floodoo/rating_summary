@@ -20,7 +20,8 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 ///   counterTwoStars: 1,
 ///   counterOneStars: 1,
 /// )
-/// ```
+/// ``'
+
 class RatingSummary extends StatelessWidget {
   const RatingSummary({
     Key? key,
@@ -36,25 +37,34 @@ class RatingSummary extends StatelessWidget {
     this.counterThreeStars = 0,
     this.counterTwoStars = 0,
     this.counterOneStars = 0,
-    this.labelCounterFiveStars = '5',
-    this.labelCounterFourStars = '4',
-    this.labelCounterThreeStars = '3',
-    this.labelCounterTwoStars = '2',
-    this.labelCounterOneStars = '1',
-    this.labelCounterFiveStarsStyle =
-        const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
-    this.labelCounterFourStarsStyle =
-        const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
-    this.labelCounterThreeStarsStyle =
-        const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
-    this.labelCounterTwoStarsStyle =
-        const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
-    this.labelCounterOneStarsStyle =
-        const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+    this.labelCounterFiveStars = const Text(
+      '5',
+      style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+    ),
+    this.labelCounterFourStars = const Text(
+      '4',
+      style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+    ),
+    this.labelCounterThreeStars = const Text(
+      '3',
+      style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+    ),
+    this.labelCounterTwoStars = const Text(
+      '2',
+      style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+    ),
+    this.labelCounterOneStars = const Text(
+      '1',
+      style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+    ),
     this.label = 'Ratings',
     this.labelStyle = const TextStyle(fontWeight: FontWeight.w600),
     this.color = Colors.amber,
     this.backgroundColor = const Color(0xFFEEEEEE),
+    this.space = 20,
+    this.thickness = 10,
+    this.starColor = Colors.amber,
+    this.alignment = CrossAxisAlignment.center,
   }) : super(key: key);
 
   /// The total number of ratings.
@@ -113,52 +123,27 @@ class RatingSummary extends StatelessWidget {
   /// The label of the [counterFiveStars].
   ///
   /// It will be displayed left of the [_ReviewBar] with 5 stars. The default value is '5'.
-  final String labelCounterFiveStars;
+  final Widget labelCounterFiveStars;
 
   /// The label of the [counterFourStars].
   ///
   /// It will be displayed left of the [_ReviewBar] with 4 stars. The default value is '4'.
-  final String labelCounterFourStars;
+  final Widget labelCounterFourStars;
 
   /// The label of the [counterThreeStars].
   ///
   /// It will be displayed left of the [_ReviewBar] with 3 stars. The default value is '3'.
-  final String labelCounterThreeStars;
+  final Widget labelCounterThreeStars;
 
   /// The label of the [counterTwoStars].
   ///
   /// It will be displayed left of the [_ReviewBar] with 2 stars. The default value is '2'.
-  final String labelCounterTwoStars;
+  final Widget labelCounterTwoStars;
 
   /// The label of the [counterOneStars].
   ///
   /// It will be displayed left of the [_ReviewBar] with 1 stars. The default value is '1'.
-  final String labelCounterOneStars;
-
-  /// The style of the [labelCounterFiveStars].
-  ///
-  /// You can use this to customize the look of it. The default value is a bold font size of 14.
-  final TextStyle labelCounterFiveStarsStyle;
-
-  /// The style of the [labelCounterFourStars].
-  ///
-  /// You can use this to customize the look of it. The default value is a bold font size of 14.
-  final TextStyle labelCounterFourStarsStyle;
-
-  /// The style of the [labelCounterThreeStars].
-  ///
-  /// You can use this to customize the look of it. The default value is a bold font size of 14.
-  final TextStyle labelCounterThreeStarsStyle;
-
-  /// The style of the [labelCounterTwoStars].
-  ///
-  /// You can use this to customize the look of it. The default value is a bold font size of 14.
-  final TextStyle labelCounterTwoStarsStyle;
-
-  /// The style of the [labelCounterOneStars].
-  ///
-  /// You can use this to customize the look of it. The default value is a bold font size of 14.
-  final TextStyle labelCounterOneStarsStyle;
+  final Widget labelCounterOneStars;
 
   /// The label of the [counter]
   ///
@@ -170,7 +155,7 @@ class RatingSummary extends StatelessWidget {
   /// You can use this to customize the look of it. The default value is a semi-bold font.
   final TextStyle labelStyle;
 
-  /// The color of the stars and the horizontal bar [_ReviewBar].
+  /// The color of the horizontal bar [_ReviewBar].
   ///
   /// The default value is Colors.amber.
   final Color color;
@@ -179,6 +164,26 @@ class RatingSummary extends StatelessWidget {
   ///
   /// The default value is Color(0xFFEEEEEE).
   final Color backgroundColor;
+
+  /// The space between the label and the bar.
+  ///
+  /// The default value is 20.
+  final double space;
+
+  /// The thickness of the bar.
+  ///
+  /// The default value is 10.
+  final double thickness;
+
+  /// The color of stars.
+  ///
+  /// The default value is Colors.amber.
+  final Color starColor;
+
+  /// The alignment of rating summary.
+  ///
+  /// The default value is MainAxisAlignment.center.
+  final CrossAxisAlignment alignment;
 
   @override
   Widget build(BuildContext context) {
@@ -191,37 +196,42 @@ class RatingSummary extends StatelessWidget {
             children: [
               _ReviewBar(
                 label: labelCounterFiveStars,
-                labelStyle: labelCounterFiveStarsStyle,
                 value: counterFiveStars / counter,
                 color: color,
+                space: space,
+                thickness: thickness,
                 backgroundColor: backgroundColor,
               ),
               _ReviewBar(
                 label: labelCounterFourStars,
-                labelStyle: labelCounterFourStarsStyle,
                 value: counterFourStars / counter,
                 color: color,
+                space: space,
+                thickness: thickness,
                 backgroundColor: backgroundColor,
               ),
               _ReviewBar(
                 label: labelCounterThreeStars,
-                labelStyle: labelCounterThreeStarsStyle,
                 value: counterThreeStars / counter,
                 color: color,
+                space: space,
+                thickness: thickness,
                 backgroundColor: backgroundColor,
               ),
               _ReviewBar(
                 label: labelCounterTwoStars,
-                labelStyle: labelCounterTwoStarsStyle,
                 value: counterTwoStars / counter,
                 color: color,
+                space: space,
+                thickness: thickness,
                 backgroundColor: backgroundColor,
               ),
               _ReviewBar(
                 label: labelCounterOneStars,
-                labelStyle: labelCounterOneStarsStyle,
                 value: counterOneStars / counter,
                 color: color,
+                space: space,
+                thickness: thickness,
                 backgroundColor: backgroundColor,
               ),
             ],
@@ -231,6 +241,7 @@ class RatingSummary extends StatelessWidget {
           const SizedBox(width: 30),
           Flexible(
             child: Column(
+              crossAxisAlignment: alignment,
               mainAxisSize: MainAxisSize.min,
               children: [
                 Text(average.toStringAsFixed(1), style: averageStyle),
@@ -239,7 +250,7 @@ class RatingSummary extends StatelessWidget {
                   itemSize: 28,
                   unratedColor: backgroundColor,
                   itemBuilder: (context, index) {
-                    return Icon(Icons.star, color: color);
+                    return Icon(Icons.star, color: starColor);
                   },
                 ),
                 const SizedBox(height: 10),
@@ -274,20 +285,15 @@ class _ReviewBar extends StatelessWidget {
     required this.label,
     required this.value,
     this.color = Colors.amber,
+    this.space = 20,
+    this.thickness = 10,
     this.backgroundColor = const Color(0xFFEEEEEE),
-    this.labelStyle =
-        const TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
   }) : super(key: key);
 
   /// The label of the bar.
   ///
   /// It will be displayed on the left side of the bar.
-  final String label;
-
-  /// Style of the label.
-  ///
-  /// The default value is a bold font size of 14.
-  final TextStyle labelStyle;
+  final Widget label;
 
   /// The progress value of the bar.
   ///
@@ -304,6 +310,16 @@ class _ReviewBar extends StatelessWidget {
   /// The default value is Color(0xFFEEEEEE).
   final Color backgroundColor;
 
+  /// The space between the label and the bar.
+  ///
+  /// The default value is 20.
+  final double space;
+
+  /// The thickness of the bar.
+  ///
+  /// The default value is 10.
+  final double thickness;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -312,16 +328,13 @@ class _ReviewBar extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisSize: MainAxisSize.min,
         children: [
-          Text(
-            label,
-            style: labelStyle,
-          ),
-          const SizedBox(width: 20),
+          label,
+          SizedBox(width: space),
           Expanded(
             child: ClipRRect(
               borderRadius: BorderRadius.circular(8),
               child: SizedBox(
-                height: 10,
+                height: thickness,
                 child: LinearProgressIndicator(
                   value: value.isFinite ? value : 0.0,
                   valueColor: AlwaysStoppedAnimation<Color>(color),

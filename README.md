@@ -48,11 +48,11 @@ RatingSummary(
 | counterThreeStars | The number of 3 star ratings.               | int       | 0                                                    | -        |
 | counterTwoStars   | The number of 2 star ratings.               | int       | 0                                                    | -        |
 | counterOneStars   | The number of 1 star ratings.               | int       | 0                                                    | -        |
-| labelCounterFiveStars | The label of the 5 star rating.               | String    | "5"                                            | -        |
-| labelCounterFourStars | The label of the 4 star rating.               | String    | "4"                                            | -        |
-| labelCounterThreeStars | The label of the 3 star rating.               | String    | "3"                                            | -        |
-| labelCounterTwoStars | The label of the 2 star rating.               | String    | "2"                                            | -        |
-| labelCounterOneStars | The label of the 1 star rating.               | String    | "1"                                            | -        |
+| labelCounterFiveStars | The label of the 5 star rating.               | Widget    | Text( '5', style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold))                                           | -        |
+| labelCounterFourStars | The label of the 4 star rating.               | Widget    | Text( '4', style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold))                                            | -        |
+| labelCounterThreeStars | The label of the 3 star rating.               | Widget    | Text( '3', style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold))                                            | -        |
+| labelCounterTwoStars | The label of the 2 star rating.               | Widget    | Text( '2', style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold))                                            | -        |
+| labelCounterOneStars | The label of the 1 star rating.               | Widget    | Text( '1', style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold))                                            | -        |
 | labelCounterFiveStarsStyle | The style of the 5 star rating label.               | TextStyle    | TextStyle(fontSize: 14, fontWeight: FontWeight.bold)                                            | -        |
 | labelCounterFourStarsStyle | The style of the 4 star rating label.               | TextStyle    | TextStyle(fontSize: 14, fontWeight: FontWeight.bold)                                            | -        |
 | labelCounterThreeStarsStyle | The style of the 3 star rating label.               | TextStyle    | TextStyle(fontSize: 14, fontWeight: FontWeight.bold)                                            | -        |
@@ -62,3 +62,7 @@ RatingSummary(
 | labelStyle        | The style of the label.                     | TextStyle | TextStyle(fontWeight: FontWeight.w600)               | -        |
 | color             | The primary color of the rating summary.    | Color     | Colors.amber                                         | -        |
 | backgroundColor   | The background color of the rating summary. | Color     | Color(0xFFEEEEEE)                                    | -        |
+| space             | The space between the label and the bar.    | double    | 20                                                   | -        |
+| thickness         | The thickness of the bar.                   | doubel    | 10                                                   | -        |
+| starColor         | The color of stars.                         | Color     | Colors.amber                                         | -        |
+| alignment         | The alignment of rating summary.            | CrossAxisAlignment      | CrossAxisAlignment.center              | -        |

@@ -20,7 +20,7 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 ///   counterTwoStars: 1,
 ///   counterOneStars: 1,
 /// )
-/// ``'
+/// ```
 
 class RatingSummary extends StatelessWidget {
   const RatingSummary({

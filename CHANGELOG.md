@@ -1,3 +1,11 @@
+## 1.0.4
+* Add new customization features for the rating component by [NivedGanga](https://github.com/NivedGanga):
+  * `labelCounterStars`: Allows adjusting the label with custom widgets.
+  * `spacing`: Enables customization of the spacing between the label and the bar.
+  * `thickness`: Provides control over the thickness of the bars.
+  * `starColor`: Allows setting a custom color for the stars.
+  * `alignment`: Adds flexibility to align the rating summary.
+
 ## 1.0.3+1
 * Fix Infinity or NaN exception by [borisvelts](https://github.com/borisvelts)
 
